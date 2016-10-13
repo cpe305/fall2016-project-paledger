@@ -15,5 +15,5 @@ android:
    - add-on
    - source
 
-  script:
-   - gradle build connectedCheck
+script:
+ - gradle build connectedCheck
