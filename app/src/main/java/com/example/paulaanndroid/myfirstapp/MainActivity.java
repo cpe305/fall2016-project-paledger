@@ -14,6 +14,7 @@ class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        android:background="#3F51B5"
         setContentView(R.layout.activity_main);
         //WebView myWebView = (WebView) findViewById(R.id.webview);
         //String data = "<IFRAME SRC='http://server1.sky-map.org/skywindow?ra=00 42 32&de=41 19 53&zoom=4' WIDTH=400 HEIGHT=320' WIDTH=400 HEIGHT=320></IFRAME>";
