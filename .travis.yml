@@ -16,7 +16,7 @@ android:
    - source
 
   script:
-    - ./gradlew build connectedCheck
+    - gradle build connectedCheck
    # Additional components
    # - extra-google-google_play_services
    # - extra-google-m2repository
