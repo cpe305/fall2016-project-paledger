@@ -11,12 +11,11 @@ import static android.provider.AlarmClock.EXTRA_MESSAGE;
 
 class MainActivity extends AppCompatActivity {
 
-	private final static String DARKBLUE = "#3F51B5";
-	
+	//private final static String DARKBLUE = "#3F51B5";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        android:background = DARKBLUE;
         setContentView(R.layout.activity_main);
         //WebView myWebView = (WebView) findViewById(R.id.webview);
         //String data = "<IFRAME SRC='http://server1.sky-map.org/skywindow?ra=00 42 32&de=41 19 53&zoom=4' WIDTH=400 HEIGHT=320' WIDTH=400 HEIGHT=320></IFRAME>";
