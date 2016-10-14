@@ -1,8 +1,10 @@
 package com.example.paulaanndroid.myfirstapp;
 
 import android.content.Intent;
+import android.graphics.Point;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Display;
 import android.view.View;
 import android.webkit.WebView;
 import android.widget.EditText;
@@ -17,9 +19,19 @@ class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        //WebView myWebView = (WebView) findViewById(R.id.webview);
-        //String data = "<IFRAME SRC='http://server1.sky-map.org/skywindow?ra=00 42 32&de=41 19 53&zoom=4' WIDTH=400 HEIGHT=320' WIDTH=400 HEIGHT=320></IFRAME>";
-        //myWebView.loadData(data, "text/html", null);
+        WebView myWebView = (WebView) findViewById(R.id.webview);
+        myWebView.getSettings().setJavaScriptEnabled(true);
+
+        Display display = getWindowManager().getDefaultDisplay();
+        Point size = new Point();
+        display.getSize(size);
+        int width = size.x/3 - 25;
+        int height = size.y/3 - 200;
+
+        String html = "<iframe width=\"450\" height=\"260\" style=\"border: 1px solid #cccccc;\" src=\"http://api.thingspeak.com/channels/31592/charts/1?width=450&height=260&results=60&dynamic=true\" ></iframe>";
+        String data = "<IFRAME SRC=\"http://server1.sky-map.org/skywindow?ra=00 42 32&de=41 19 53&zoom=4\" WIDTH=" +
+                width + " HEIGHT=" + height + "></IFRAME>";
+        myWebView.loadData(data, "text/html", null);
         //myWebView.loadUrl("http://server1.sky-map.org/?locale=EN");
     }
 

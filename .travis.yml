@@ -27,4 +27,7 @@ before_script:
 before_install:
   - "chmod +x ./gradlew"
 
-script: ./gradlew connectedAndroidTest --stacktrace
+script: 
+  - gradle build connectedCheck
+
+#script: ./gradlew connectedAndroidTest --stacktrace
