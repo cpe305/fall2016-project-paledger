@@ -1,0 +1,15 @@
+/**
+ * Created by Paula Ann on 10/26/2016.
+ */
+
+public class StarGazinDisplay extends Display {
+    private View view;
+    private int screenWidth;
+    private int screenHeight;
+
+    public void render() {}
+    private void search() {}
+    private void showLocation() {}
+    private void zoomIn() {}
+    private void zoomOut() {}
+}
