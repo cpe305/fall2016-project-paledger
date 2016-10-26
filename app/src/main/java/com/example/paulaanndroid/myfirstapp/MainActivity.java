@@ -14,6 +14,9 @@ import static android.provider.AlarmClock.EXTRA_MESSAGE;
 class MainActivity extends AppCompatActivity {
 
 	//private final static String DARKBLUE = "#3F51B5";
+    private final static int widthPadding = 25;
+    private final static int heightPadding = 200;
+    private final static int divisor = 3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,8 +28,8 @@ class MainActivity extends AppCompatActivity {
         Display display = getWindowManager().getDefaultDisplay();
         Point size = new Point();
         display.getSize(size);
-        int width = size.x/3 - 25;
-        int height = size.y/3 - 200;
+        int width = size.x/divisor - widthPadding;
+        int height = size.y/divisor - heightPadding;
 
         String html = "<iframe width=\"450\" height=\"260\" style=\"border: 1px solid #cccccc;\" src=\"http://api.thingspeak.com/channels/31592/charts/1?width=450&height=260&results=60&dynamic=true\" ></iframe>";
         String data = "<IFRAME SRC=\"http://server1.sky-map.org/skywindow?ra=00 42 32&de=41 19 53&zoom=4\" WIDTH=" +
