@@ -25,6 +25,46 @@ public class SkyMapURL extends URL {
     public SkyMapURL() {
         url = "";
     }
+    
+    public updateURL() {
+        url = "http://server1.sky-map.org/skywindow.jsp?";
+        if (objStr != null) {
+            url += this.getObject();
+        }
+        if (ra != null) {
+            url += this.getRa();
+        }
+        if (de != null) {
+            url += this.getDe();
+        }
+        if (showBox != null) {
+            url += this.getShowBox();
+        }
+        if (boxColor != null) {
+            url += this.getBoxColor();
+        }
+        if (boxWidth != null) {
+            url += this.getBoxWidth();
+        }
+        if (boxHeight != null) {
+            url += this.getBoxHeight();
+        }
+        if (zoom != null) {
+            url += this.getZoom();
+        }
+        if (showGrid != null) {
+            url += this.getShowGrid();
+        }
+        if (showConstellationLines != null) {
+            url += this.getShowConstellationLines();
+        }
+        if (showConstellationBoundaries != null){
+            url += this.getShowConstellationBoundaries();
+        }
+        if (imgSource != null) {
+            url += this.getImgSource();
+        }
+    }
 
     public String getURL() {
         return url;
@@ -130,7 +170,7 @@ public class SkyMapURL extends URL {
         this.imgSource = imgSource;   
     }
     
-    public String getObject() {
+    public String getImgSource() {
         return "img_source=" + imgSource;   
     }
 }
