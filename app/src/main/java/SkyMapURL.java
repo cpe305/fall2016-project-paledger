@@ -6,9 +6,10 @@ import java.lang.String;
 public class SkyMapURL extends URL {
     private String url;
     private String server;
-    private StarID starID;
+    //private StarID starID;
     private float zoomFactor;
     
+    private String starID;
     private String ra;
     private String objStr;
     private String de;
@@ -154,7 +155,7 @@ public class SkyMapURL extends URL {
         this.showConstellationLines = String.valueOf(showConstellationLines);   
     }
     
-    public String getShowConstellationsLines() {
+    public String getShowConstellationLines() {
         return "show_constellation_lines=" + showConstellationLines;   
     }
     
