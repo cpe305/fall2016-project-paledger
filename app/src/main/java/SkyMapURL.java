@@ -26,7 +26,7 @@ public class SkyMapURL extends URL {
         url = "";
     }
     
-    public updateURL() {
+    public void updateURL() {
         url = "http://server1.sky-map.org/skywindow.jsp?";
         if (objStr != null) {
             url += this.getObject();
