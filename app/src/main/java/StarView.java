@@ -4,8 +4,7 @@
 
 import android.webkit.WebView;
 
-public abstract class View {
-    private URL url;
+public abstract class StarView {
     private URLComposer composer;
     private WebView view;
 

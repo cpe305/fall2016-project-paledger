@@ -5,10 +5,11 @@ import java.lang.String;
 
 public class SkyMapURL extends URL {
     private String url;
-    private String server;
+
     //private StarID starID;
+    private String baseURL;
     private float zoomFactor;
-    
+    private String server;
     private String starID;
     private String ra;
     private String objStr;
@@ -22,48 +23,53 @@ public class SkyMapURL extends URL {
     private String showConstellationLines;
     private String showConstellationBoundaries;
     private String imgSource;
+    private boolean needsUpdate;
 
-    public SkyMapURL() {
-        url = "";
+    public SkyMapURL(String baseURL) {
+        this.baseURL = baseURL;
+        url = baseURL;
+        needsUpdate = true;
     }
     
     public void updateURL() {
-        url = "http://server1.sky-map.org/skywindow.jsp?";
-        if (objStr != null) {
-            url += this.getObject();
-        }
-        if (ra != null) {
-            url += this.getRa();
-        }
-        if (de != null) {
-            url += this.getDe();
-        }
-        if (showBox != null) {
-            url += this.getShowBox();
-        }
-        if (boxColor != null) {
-            url += this.getBoxColor();
-        }
-        if (boxWidth != null) {
-            url += this.getBoxWidth();
-        }
-        if (boxHeight != null) {
-            url += this.getBoxHeight();
-        }
-        if (zoom != null) {
-            url += this.getZoom();
-        }
-        if (showGrid != null) {
-            url += this.getShowGrid();
-        }
-        if (showConstellationLines != null) {
-            url += this.getShowConstellationLines();
-        }
-        if (showConstellationBoundaries != null){
-            url += this.getShowConstellationBoundaries();
-        }
-        if (imgSource != null) {
-            url += this.getImgSource();
+        if (needsUpdate) {
+            if (objStr != null) {
+                url += this.getObject();
+            }
+            if (ra != null) {
+                url += this.getRa();
+            }
+            if (de != null) {
+                url += this.getDe();
+            }
+            if (showBox != null) {
+                url += this.getShowBox();
+            }
+            if (boxColor != null) {
+                url += this.getBoxColor();
+            }
+            if (boxWidth != null) {
+                url += this.getBoxWidth();
+            }
+            if (boxHeight != null) {
+                url += this.getBoxHeight();
+            }
+            if (zoom != null) {
+                url += this.getZoom();
+            }
+            if (showGrid != null) {
+                url += this.getShowGrid();
+            }
+            if (showConstellationLines != null) {
+                url += this.getShowConstellationLines();
+            }
+            if (showConstellationBoundaries != null) {
+                url += this.getShowConstellationBoundaries();
+            }
+            if (imgSource != null) {
+                url += this.getImgSource();
+            }
+            needsUpdate = false;
         }
     }
 

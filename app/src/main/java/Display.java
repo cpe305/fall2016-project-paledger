@@ -3,7 +3,7 @@
  */
 
 public abstract class Display {
-    private View view;
+    private StarView view;
 
     public abstract void render();
 }

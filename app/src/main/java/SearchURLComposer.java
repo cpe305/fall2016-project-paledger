@@ -6,7 +6,7 @@ public class SearchURLComposer implements URLComposer {
     private URL url;
 
     public SearchURLComposer() {
-
+        url = new SkyMapURL("http://server1.sky-map.org/search?");
     }
 
     public String compose() {

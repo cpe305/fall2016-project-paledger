@@ -3,7 +3,7 @@
  */
 
 public class StarGazinDisplay extends Display {
-    private View view;
+    private StarView view;
     private int screenWidth;
     private int screenHeight;
 

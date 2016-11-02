@@ -4,13 +4,12 @@
 
 import android.webkit.WebView;
 
-public class SearchView extends View {
-    private URL url;
+public class SearchView extends StarView {
     private URLComposer composer;
     private WebView view;
 
     public SearchView() {
-
+        composer = new SearchURLComposer();
     }
 
     public void refresh() {

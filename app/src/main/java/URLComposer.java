@@ -3,5 +3,5 @@
  */
 
 public interface URLComposer {
-    public String compose();
+    String compose();
 }
