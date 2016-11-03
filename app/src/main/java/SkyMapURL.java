@@ -79,107 +79,120 @@ public class SkyMapURL extends URL {
     }
     
     public void setRa(float ra) {
+        needsUpdate = true;
         this.ra = String.valueOf(ra);   
     }
     
     public String getRa() {
-        return "ra=" + ra;   
+        return "&ra=" + ra;
     }
     
     public void setObject(String objStr) {
+        needsUpdate = true;
         this.objStr = objStr;   
     }
     
     public String getObject() {
-        return "object=" + objStr;   
+        return "&object=" + objStr;
     }
     
     public void setDe(float de) {
+        needsUpdate = true;
         this.de = String.valueOf(de);   
     }
     
     public String getDe() {
-        return "de=" + de;   
+        return "&de=" + de;
     }
     
     public void setStarID(String starID) {
+        needsUpdate = true;
         this.starID = starID;   
     }
     
     public String getStarID() {
-        return "star_id=" + starID;   
+        return "&star_id=" + starID;
     }
     
     public void setShowBox(int showBox) {
+        needsUpdate = true;
         this.showBox = String.valueOf(showBox);   
     }
     
     public String getShowBox() {
-        return "show_box=" + showBox;   
+        return "&show_box=" + showBox;
     }
     
     public void setBoxColor(String boxColor) {
+        needsUpdate = true;
         this.boxColor = boxColor;   
     }
     
     public String getBoxColor() {
-        return "box_color=" + boxColor;   
+        return "&box_color=" + boxColor;
     }
     
     public void setBoxWidth(int boxWidth) {
+        needsUpdate = true;
         this.boxWidth = String.valueOf(boxWidth);   
     }
     
     public String getBoxWidth() {
-        return "box_width=" + boxWidth;   
+        return "&box_width=" + boxWidth;
     }
     
     public void setBoxHeight(int boxHeight) {
+        needsUpdate = true;
         this.boxHeight = String.valueOf(boxHeight);   
     }
     
     public String getBoxHeight() {
-        return "box_height=" + boxHeight;   
+        return "&box_height=" + boxHeight;
     }
     
     public void setZoom(float zoom) {
+        needsUpdate = true;
         this.zoom = String.valueOf(zoom);   
     }
     
     public String getZoom() {
-        return "zoom=" + zoom;   
+        return "&zoom=" + zoom;
     }
     
     public void setShowGrid(int showGrid) {
+        needsUpdate = true;
         this.showGrid = String.valueOf(showGrid);   
     }
     
     public String getShowGrid() {
-        return "show_grid=" + showGrid;   
+        return "&show_grid=" + showGrid;
     }
     
     public void setShowConstellationLines(int showConstellationLines) {
+        needsUpdate = true;
         this.showConstellationLines = String.valueOf(showConstellationLines);   
     }
     
     public String getShowConstellationLines() {
-        return "show_constellation_lines=" + showConstellationLines;   
+        return "&show_constellation_lines=" + showConstellationLines;
     }
     
     public void setShowConstellationBoundaries(int showConstellationBoundaries) {
+        needsUpdate = true;
         this.showConstellationBoundaries = String.valueOf(showConstellationBoundaries);   
     }
     
     public String getShowConstellationBoundaries() {
-        return "show_constellation_boundaries=" + showConstellationBoundaries;   
+        return "&show_constellation_boundaries=" + showConstellationBoundaries;
     }
     
     public void setImgSource(String imgSource) {
+        needsUpdate = true;
         this.imgSource = imgSource;   
     }
     
     public String getImgSource() {
-        return "img_source=" + imgSource;   
+        return "&img_source=" + imgSource;
     }
 
     public boolean getNeedsUpdate() {
