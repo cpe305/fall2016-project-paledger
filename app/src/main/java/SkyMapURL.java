@@ -33,6 +33,7 @@ public class SkyMapURL extends URL {
     
     public void updateURL() {
         if (needsUpdate) {
+            url = baseURL;
             if (objStr != null) {
                 url += this.getObject();
             }
