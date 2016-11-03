@@ -181,4 +181,8 @@ public class SkyMapURL extends URL {
     public String getImgSource() {
         return "img_source=" + imgSource;   
     }
+
+    public boolean getNeedsUpdate() {
+        return needsUpdate;
+    }
 }
