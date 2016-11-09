@@ -9,6 +9,10 @@ import android.view.View;
 import android.webkit.WebView;
 import android.widget.EditText;
 import android.annotation.SuppressLint;
+
+import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.location.LocationServices;
+
 import static android.provider.AlarmClock.EXTRA_MESSAGE;
 
 class MainActivity extends AppCompatActivity {
@@ -17,6 +21,7 @@ class MainActivity extends AppCompatActivity {
     private final static int widthPadding = 25;
     private final static int heightPadding = 200;
     private final static int divisor = 3;
+    private GoogleApiClient client;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +29,8 @@ class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         WebView myWebView = (WebView) findViewById(R.id.webview);
         myWebView.getSettings().setJavaScriptEnabled(true);
+
+
 
         Display display = getWindowManager().getDefaultDisplay();
         Point size = new Point();

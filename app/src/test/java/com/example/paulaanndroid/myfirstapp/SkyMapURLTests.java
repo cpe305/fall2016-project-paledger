@@ -1,9 +1,12 @@
+package com.example.paulaanndroid.myfirstapp;
+import com.example.paulaanndroid.myfirstapp.SkyMapURL;
+
 import org.junit.Test;
 
 import static junit.framework.Assert.assertEquals;
 
 /**
- * Basic tests for the SkyMapURL class.
+ * Basic tests for the com.example.paulaanndroid.myfirstapp.SkyMapURL class.
  * @author sarahpadlipsky
  * @version November 2, 2016
  */

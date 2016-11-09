@@ -29,3 +29,4 @@ before_install:
 
 script:
   - ./gradlew test --stacktrace
+  - ./gradlew sonarqube -Dsonar.host.url=http://smartr.cs.hm.edu:9000

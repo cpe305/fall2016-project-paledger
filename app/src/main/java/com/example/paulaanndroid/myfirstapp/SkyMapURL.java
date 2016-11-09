@@ -1,4 +1,4 @@
-/**
+package com.example.paulaanndroid.myfirstapp; /**
  * Created by Paula Ann on 10/26/2016.
  */
 import java.lang.String;
@@ -6,7 +6,7 @@ import java.lang.String;
 public class SkyMapURL extends URL {
     private String url;
 
-    //private StarID starID;
+    //private com.example.paulaanndroid.myfirstapp.StarID starID;
     private String baseURL;
     private float zoomFactor;
     private String server;
@@ -75,6 +75,9 @@ public class SkyMapURL extends URL {
     }
 
     public String getURL() {
+        if (needsUpdate) {
+            updateURL();
+        }
         return url;
     }
     
