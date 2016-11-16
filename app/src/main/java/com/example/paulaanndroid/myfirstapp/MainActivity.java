@@ -38,7 +38,6 @@ class MainActivity extends AppCompatActivity {
         int width = size.x/divisor - widthPadding;
         int height = size.y/divisor - heightPadding;
 
-        String html = "<iframe width=\"450\" height=\"260\" style=\"border: 1px solid #cccccc;\" src=\"http://api.thingspeak.com/channels/31592/charts/1?width=450&height=260&results=60&dynamic=true\" ></iframe>";
         String data = "<IFRAME SRC=\"http://server1.sky-map.org/skywindow?ra=00 42 32&de=41 19 53&zoom=4\" WIDTH=" +
                 width + " HEIGHT=" + height + "></IFRAME>";
         myWebView.loadData(data, "text/html", null);
