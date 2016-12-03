@@ -1,4 +1,5 @@
-package com.example.paulaanndroid.myfirstapp; /**
+package com.example.paulaanndroid.myfirstapp;
+/**
  * Created by Paula Ann on 10/26/2016.
  */
 
@@ -13,6 +14,5 @@ public class SearchView implements StarView {
     }
 
     public void refresh() {
-
     }
 }

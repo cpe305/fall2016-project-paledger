@@ -20,7 +20,7 @@ import android.support.v7.app.AppCompatActivity;
 
 import static android.provider.AlarmClock.EXTRA_MESSAGE;
 
-class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity {
 
 	//private final static String DARKBLUE = "#3F51B5";
     private final static int widthPadding = 25;
@@ -34,8 +34,6 @@ class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         WebView myWebView = (WebView) findViewById(R.id.webview);
         myWebView.getSettings().setJavaScriptEnabled(true);
-
-
 
         Display display = getWindowManager().getDefaultDisplay();
         Point size = new Point();
@@ -63,17 +61,6 @@ class MainActivity extends AppCompatActivity {
                 width + " HEIGHT=" + height + "></IFRAME>";
         myWebView.loadDataWithBaseURL("http://server1.sky-map.org/skywindow", html, "text/html", "UTF-8", null);
         //myWebView.loadUrl("http://server1.sky-map.org/?locale=EN");
-    }
-
-    public void sendMessage(View view) {
-        Intent intent = new Intent(this, DisplayMessageActivity.class);
-        EditText editText = (EditText) findViewById(R.id.edit_message);
-        String message = "";
-        if (editText.getText() != null) {
-            message = editText.getText().toString();
-            intent.putExtra(EXTRA_MESSAGE, message);
-            startActivity(intent);
-        }
     }
 
 }

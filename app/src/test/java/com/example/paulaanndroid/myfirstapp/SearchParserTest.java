@@ -12,10 +12,26 @@ import static junit.framework.Assert.assertEquals;
  * @version November 29, 2016
  */
 public class SearchParserTest {
+    private static SearchParser parser = new SearchParser();
+
     @Test
     public void testParsing1() {
         String urlString = "http://server1.sky-map.org/search?star=polaris";
-        Document doc = SearchParser.parseURL(urlString);
+        Document doc = parser.parseURL(urlString);
         assertEquals(doc.getElementsByTagName("constellation").item(0).getTextContent(), "Ursa Minor");
+    }
+
+    @Test
+    public void testParsingGetElement1() {
+        String urlString = "http://server1.sky-map.org/search?star=polaris";
+        parser.parseURL(urlString);
+        assertEquals(parser.getElement("constellation"), "Ursa Minor");
+    }
+
+    @Test
+    public void testParsingGetElement2() {
+        String urlString = "http://server1.sky-map.org/search?star=orion";
+        parser.parseURL(urlString);
+        assertEquals(parser.getElement("ra"), "5.5765426");
     }
 }
