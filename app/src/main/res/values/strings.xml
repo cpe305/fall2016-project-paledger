@@ -2,5 +2,6 @@
 <resources>
     <string name="app_name">StarGazin\'</string>
     <string name="edit_message">Search the galaxy...</string>
+    <string name="search_title">Search the galaxy!</string>
     <string name="button_send">Explore!</string>
 </resources>
