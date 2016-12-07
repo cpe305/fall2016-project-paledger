@@ -5,11 +5,11 @@ package com.example.paulaanndroid.myfirstapp;
 
 import android.webkit.WebView;
 
-public class SearchView implements StarView {
+public class StarSearchView implements StarView {
     private URLComposer urlComposer;
     private WebView view;
 
-    public SearchView() {
+    public StarSearchView() {
         urlComposer = new SearchURLComposer();
     }
 

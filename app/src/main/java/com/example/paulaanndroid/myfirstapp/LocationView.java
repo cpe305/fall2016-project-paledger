@@ -6,19 +6,13 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.FragmentActivity;
 
-import com.google.android.gms.common.ConnectionResult;
-import com.google.android.gms.common.api.GoogleApiClient;
-import com.google.android.gms.location.LocationServices;
 import android.util.Log;
 
 import android.webkit.WebView;
 
 public class LocationView extends FragmentActivity implements
-        GoogleApiClient.ConnectionCallbacks,
-        GoogleApiClient.OnConnectionFailedListener,
         StarView {
 
-    private GoogleApiClient client;
     private static final String TAG = "StarGazinActivity";
     private URLComposer urlComposer;
     private WebView webView;
@@ -28,7 +22,7 @@ public class LocationView extends FragmentActivity implements
     }
 
     public void refresh() {}
-
+/*
     @Override
     public void onConnected(@Nullable Bundle bundle) {
         Log.i(TAG, "Location services connected.");
@@ -76,5 +70,5 @@ public class LocationView extends FragmentActivity implements
     public void onResume() {
         super.onResume();
         client.connect();
-    }
+    }*/
 }
