@@ -1,5 +1,7 @@
 apply plugin: 'com.android.application'
 apply plugin: 'checkstyle'
+apply plugin: 'jacoco-android'
+apply from: './sonarqube.gradle'
 
 android {
     compileSdkVersion 25
@@ -21,6 +23,17 @@ android {
         abortOnError false
     }
 }
+
+jacocoAndroidUnitTestReport {
+    csv.enabled false
+    html.enabled true
+    xml.enabled true
+}
+
+jacoco {
+    toolVersion = "0.7.7.201606060606"
+}
+
 
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
