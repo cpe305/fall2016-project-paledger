@@ -4,4 +4,5 @@
     <string name="edit_message">Search the galaxy...</string>
     <string name="search_title">Search the galaxy!</string>
     <string name="button_send">Explore!</string>
+    <string name="location_title">Where you are!</string>
 </resources>
