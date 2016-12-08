@@ -8,7 +8,7 @@ android:
     - tools
     - build-tools-24.0.3
     - android-22
-    - android-24
+    - android-25
     - sys-img-armeabi-v7a-android-22
     - extra-android-m2repository
     
@@ -23,7 +23,7 @@ before_script:
    - emulator -avd test -no-skin -no-audio -no-window &
    - android-wait-for-emulator
    - adb shell input keyevent 82 
-   - echo y | android update sdk --no-ui --filter build-tools-25.0.0
+   - echo y | android update sdk --no-ui --filter build-tools-25.0.0,android-25
 
   
 before_install:
@@ -34,3 +34,4 @@ script:
   #- ./gradlew sonarqube -Dsonar.host.url=http://smartr.cs.hm.edu:9000
   - ./gradlew clean assembleDebug jacocoTestDebugUnitTestReport sonarqube
 
+[Android SDK Build-Tools 25, Android SDK Platform 25]
