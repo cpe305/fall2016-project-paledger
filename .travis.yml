@@ -33,5 +33,3 @@ script:
   - ./gradlew test --stacktrace
   #- ./gradlew sonarqube -Dsonar.host.url=http://smartr.cs.hm.edu:9000
   - ./gradlew clean assembleDebug jacocoTestDebugUnitTestReport sonarqube
-
-[Android SDK Build-Tools 25, Android SDK Platform 25]
