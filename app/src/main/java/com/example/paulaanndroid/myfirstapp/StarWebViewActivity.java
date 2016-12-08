@@ -1,5 +1,5 @@
 package com.example.paulaanndroid.myfirstapp;
-
+import com.example.paulaanndroid.myfirstapp.R.*;
 import android.app.Activity;
 import android.app.SearchManager;
 import android.content.Context;
