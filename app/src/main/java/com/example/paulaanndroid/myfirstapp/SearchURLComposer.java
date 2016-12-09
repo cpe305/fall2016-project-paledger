@@ -14,7 +14,7 @@ public class SearchURLComposer implements URLComposer {
 
     public SearchURLComposer(SearchParser newParser) {
         String urlString = "";
-        
+
 
         url = new SkyMapURL();
     }
