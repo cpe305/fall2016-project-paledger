@@ -4,16 +4,23 @@ import android.app.Activity;
 import android.app.SearchManager;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
+import android.widget.TextView;
+
 
 /**
  * Created by Paula Ann on 12/4/2016.
  */
 
-public class SearchResultsActivity extends Activity {
+public class SearchResultsActivity extends AppCompatActivity {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        setContentView(R.layout.activity_search);
 
         handleIntent(getIntent());
     }
@@ -32,9 +39,26 @@ public class SearchResultsActivity extends Activity {
 
             showResults(query);
         }
-    }
+    }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              W
 
     private void showResults(String query) {
         System.out.println("Search query: " + query);
+
+        WebView starWebView = (WebView) findViewById(R.id.webview);
+        starWebView.getSettings().setJavaScriptEnabled(true);
+        //starWebView.setPadding(0, 0, 0, 0);
+        //starWebView.loadUrlhtml(url);
+        SearchParser searchParser = new SearchParser();
+        URL url is
+        if (searchParser.parseURL(query) != null) {
+            TextView searchTextView = (TextView) findViewById(R.id.query);;
+            if (searchParser.getElement("status").equals("0")) {
+                searchTextView.setText(query);
+            }
+            else {
+                searchTextView.setText("invalid search, try again!");
+            }
+        }
     }
+
 }

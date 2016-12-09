@@ -10,6 +10,6 @@
     <item android:id="@+id/location"
         android:title="@string/location_title"
         android:icon="@drawable/location"
-        app:showAsAction="collapseActionView|ifRoom"
+        app:showAsAction="ifRoom"
         />
 </menu>

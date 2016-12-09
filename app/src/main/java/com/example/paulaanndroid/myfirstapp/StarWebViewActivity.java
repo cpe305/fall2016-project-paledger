@@ -37,6 +37,7 @@ public class StarWebViewActivity extends AppCompatActivity {
         starWebView.loadData(html, "text/html", null);
         starWebView.setWebViewClient(new StarWebViewClient());
     }
+
     private class StarWebViewClient extends WebViewClient {
         @Override
         public boolean shouldOverrideUrlLoading(WebView webview, String url) {
@@ -61,6 +62,7 @@ public class StarWebViewActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
+        System.out.println("onCreateOptionsMenu");
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.options_menu, menu);
         // Associate searchable configuration with the SearchView
@@ -76,6 +78,7 @@ public class StarWebViewActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == R.id.search) {
+            System.out.println("onOptionsItemSelected");
             return true;
         }
         return false;
