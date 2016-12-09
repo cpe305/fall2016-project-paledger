@@ -29,6 +29,8 @@
 <h3>System Architecture Overview</h3>
 <h4>System Architecture Diagram</h4>
 <p>I used a Model View Presenter architecture. Earlier in the process, I was thinking of my software in a 3-tier architecture,&nbsp;but because of the specificity of Android, it is more accurate to use MVP to represent it.&nbsp;</p>
+<p>Before:</p>
+<img src="/app/docs/3tier.jpg"></img>
 
 <h4>Class Diagrams</h4>
 <p>My class diagrams have changed slightly, in that I added more classes to support XML parsing of the search API responses. I also added another Activity class for the Search page. &nbsp;</p>
@@ -46,10 +48,11 @@
 <li>Google Location Services</li>
 </ul>
 <h3>Design Patterns Used</h3>
-<h4>State Pattern</h4>
-<p>I previously represented this as a Strategy Pattern. It is currently used to change functionality between the default hard-coded setting and the search representation of the webview. In addition user interface functionality, it would also add behavior for location services.</p>
+<h4>Strategy Pattern</h4>
+<p>It is currently used to change functionality between the default hard-coded setting and the search representation of the webview. In addition user interface functionality, it would also add behavior for location services.</p>
 <p>&nbsp;</p>
 <h3>The One Thing I Like Best</h3>
+<p>I think that I use the strategy pattern well in implementing the different views of the app.</p>
 <h3>Key Learning Experience</h3>
 <p>I didn't allot enough time to compensate for the learning curve of programming in Android. It was really satisfying to learn the basics of Android, and I definitely plan on expanding this to my original functionality and improving the user interface a lot. (It needs a lot of help!)&nbsp;</p>
 <h4>Support or Contact</h4>
