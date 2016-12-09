@@ -92,7 +92,5 @@ public class StarWebViewActivity extends AppCompatActivity {
             System.out.println(result);
             starWebView.loadUrl(result);
         }
-
-
     }
 }
