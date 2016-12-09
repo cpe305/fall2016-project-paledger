@@ -13,10 +13,22 @@ public class SearchURLComposer implements URLComposer {
     }
 
     public SearchURLComposer(SearchParser newParser) {
-        String urlString = "";
+        parser = newParser;
 
+    }
 
-        url = new SkyMapURL();
+    private boolean initURLWithParser() {
+        if (parser.getElement("status") != null) {
+            return false;
+        }
+
+        String urlString = "http://server1.sky-map.org/skywindow?";
+        String fragment = "";
+        if ((fragment = parser.getElement("object")) != null) {
+            urlString += fragment;
+            urlString += "&zoom=8";
+        }
+        return true;
     }
 
     public SearchURLComposer(String initURL, SearchParser newParser) {
