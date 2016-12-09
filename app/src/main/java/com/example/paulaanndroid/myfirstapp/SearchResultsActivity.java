@@ -46,16 +46,11 @@ public class SearchResultsActivity extends AppCompatActivity {
 
         WebView starWebView = (WebView) findViewById(R.id.webview);
         starWebView.getSettings().setJavaScriptEnabled(true);
-        //starWebView.setPadding(0, 0, 0, 0);
-        //starWebView.loadUrlhtml(url);
         SearchParser searchParser = new SearchParser();
-        if (searchParser.parseURL(query) != null) {
+        if (searchParser.parseQuery(query) != null) {
             TextView searchTextView = (TextView) findViewById(R.id.query);;
             if (searchParser.getElement("status").equals("0")) {
                 searchTextView.setText(query);
-            }
-            else {
-                searchTextView.setText("invalid search, try again!");
             }
         }
     }

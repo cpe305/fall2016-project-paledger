@@ -26,9 +26,9 @@ public class SkyMapURLTests {
     SkyMapURL url = new SkyMapURL(urlString);
     url.setObject("objectString");
     urlString += url.getObject();
-    url.setRa(2);
+    url.setRa("2");
     urlString += url.getRa();
-    url.setDe(3);
+    url.setDe("3");
     urlString += url.getDe();
     url.updateURL();
     assertEquals(urlString, url.getURL());

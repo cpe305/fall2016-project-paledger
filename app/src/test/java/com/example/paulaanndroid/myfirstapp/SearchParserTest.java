@@ -16,22 +16,22 @@ public class SearchParserTest {
 
     @Test
     public void testParsing1() {
-        String urlString = "http://server1.sky-map.org/search?star=polaris";
-        Document doc = parser.parseURL(urlString);
+        String urlString = "polaris";
+        Document doc = parser.parseQuery(urlString);
         assertEquals(doc.getElementsByTagName("constellation").item(0).getTextContent(), "Ursa Minor");
     }
 
     @Test
     public void testParsingGetElement1() {
-        String urlString = "http://server1.sky-map.org/search?star=polaris";
-        parser.parseURL(urlString);
+        String urlString = "polaris";
+        parser.parseQuery(urlString);
         assertEquals(parser.getElement("constellation"), "Ursa Minor");
     }
 
     @Test
     public void testParsingGetElement2() {
-        String urlString = "http://server1.sky-map.org/search?star=orion";
-        parser.parseURL(urlString);
+        String urlString = "orion";
+        parser.parseQuery(urlString);
         assertEquals(parser.getElement("ra"), "5.5765426");
     }
 }

@@ -10,6 +10,7 @@ public class SkyMapURL extends URL {
     private String baseURL;
     private float zoomFactor;
     private String server;
+    private String status;
     private String starID;
     private String ra;
     private String objStr;
@@ -30,10 +31,18 @@ public class SkyMapURL extends URL {
         url = baseURL;
         needsUpdate = true;
     }
+
+    public SkyMapURL() {
+        this.baseURL = baseURL;
+        url = baseURL;
+        needsUpdate = true;
+    }
     
     public void updateURL() {
-        if (needsUpdate) {
+        if (needsUpdate)  {
             url = baseURL;
+            System.out.println("getting RA : " + this.getRa());
+
             if (objStr != null) {
                 url += this.getObject();
             }
@@ -76,14 +85,36 @@ public class SkyMapURL extends URL {
 
     public String getURL() {
         if (needsUpdate) {
+            System.out.println("updating");
             updateURL();
         }
         return url;
     }
-    
-    public void setRa(float ra) {
+
+    public void setURL(String newUrl) {
+        url = newUrl;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public String getStatus() {
+        return this.status;
+    }
+
+    public void setBaseURL(String baseURL) {
+        this.baseURL = baseURL;
+    }
+
+    public String getBaseURL() {
+        return baseURL;
+    }
+
+    public void setRa(String ra) {
+        System.out.println("setting RA");
         needsUpdate = true;
-        this.ra = String.valueOf(ra);   
+        this.ra = ra;
     }
     
     public String getRa() {
@@ -99,9 +130,9 @@ public class SkyMapURL extends URL {
         return "&object=" + objStr;
     }
     
-    public void setDe(float de) {
+    public void setDe(String de) {
         needsUpdate = true;
-        this.de = String.valueOf(de);   
+        this.de = de;
     }
     
     public String getDe() {

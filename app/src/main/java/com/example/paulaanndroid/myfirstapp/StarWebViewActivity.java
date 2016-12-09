@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.SearchManager;
 import android.content.Context;
 import android.content.res.Configuration;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.KeyEvent;
@@ -12,6 +13,8 @@ import android.view.MenuItem;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.SearchView;
+
+import org.w3c.dom.Document;
 
 /**
  * Created by Paula Ann on 12/3/2016.
@@ -24,17 +27,9 @@ public class StarWebViewActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        int height = this.getWindow().getDecorView().getBottom();
-
-        System.out.println(height);
-        String html = "<IFRAME SRC=\"http://server1.sky-map.org/skywindow?star=polaris WIDTH=400\"" + "HEIGHT=400" + "></IFRAME>";
-
-        String url = "http://www.sky-map.org";
         starWebView = (WebView) findViewById(R.id.webview);
         starWebView.getSettings().setJavaScriptEnabled(true);
-        //starWebView.setPadding(0, 0, 0, 0);
-        //starWebView.loadUrl(url);
-        starWebView.loadData(html, "text/html", null);
+        new DownloadXMLResponse().execute("andromeda");
         starWebView.setWebViewClient(new StarWebViewClient());
     }
 
@@ -82,5 +77,22 @@ public class StarWebViewActivity extends AppCompatActivity {
             return true;
         }
         return false;
+    }
+
+    private class DownloadXMLResponse extends AsyncTask<String, Void, String> {
+        @Override
+        protected String doInBackground(String... queries) {
+            SearchURLComposer composer = new SearchURLComposer();
+            String url = composer.compose(queries[0]);
+            return url;
+        }
+
+        protected void onPostExecute(String result) {
+            System.out.println("HELLO");
+            System.out.println(result);
+            starWebView.loadUrl(result);
+        }
+
+
     }
 }
